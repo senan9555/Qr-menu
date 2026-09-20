@@ -4,178 +4,733 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Baku Coffee - Menyu</title>
+    <title>Baku Coffee | Menyu</title>
+
+    <meta name="description" content="Baku Coffee rəqəmsal menyu">
 
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f3ee;
-            color: #2b2118;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: #f7f4ef;
+            color: #211a15;
+            line-height: 1.5;
         }
 
+        /* HERO */
+
         .hero {
-            background: #3b281c;
+            position: relative;
+            min-height: 390px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(20, 13, 9, 0.9),
+                    rgba(20, 13, 9, 0.15)
+                ),
+                url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85")
+                center / cover;
+        }
+
+        .hero-content {
+            width: 100%;
+            padding: 35px 22px;
             color: white;
-            text-align: center;
-            padding: 45px 20px;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255,255,255,0.14);
+            backdrop-filter: blur(10px);
+            padding: 7px 12px;
+            border-radius: 50px;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
         }
 
         .hero h1 {
-            margin: 0;
-            font-size: 34px;
+            font-size: 38px;
+            line-height: 1.05;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
         }
 
         .hero p {
-            margin-top: 10px;
-            opacity: 0.85;
+            color: rgba(255,255,255,0.82);
+            font-size: 15px;
         }
 
-        .menu {
-            max-width: 700px;
+        /* INFO */
+
+        .info {
+            display: flex;
+            gap: 10px;
+            padding: 16px;
+            background: white;
+            border-bottom: 1px solid #eee7df;
+        }
+
+        .info-card {
+            flex: 1;
+            text-align: center;
+            padding: 10px 5px;
+            font-size: 12px;
+            color: #756b63;
+        }
+
+        .info-card strong {
+            display: block;
+            color: #241b15;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* CATEGORY NAV */
+
+        .category-nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #eee7df;
+            padding: 12px 14px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .category-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: #6d625a;
+            background: #f5f1eb;
+            padding: 9px 15px;
+            margin-right: 7px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .category-nav a:first-child {
+            background: #2d2118;
+            color: white;
+        }
+
+        /* CONTENT */
+
+        .container {
+            max-width: 720px;
             margin: auto;
-            padding: 25px 20px;
+            padding: 28px 16px 110px;
         }
 
-        .category {
-            margin-bottom: 30px;
+        .section {
+            margin-bottom: 42px;
+            scroll-margin-top: 80px;
         }
 
-        .category h2 {
-            font-size: 22px;
-            border-bottom: 2px solid #d6b98c;
-            padding-bottom: 10px;
-        }
-
-        .item {
+        .section-title {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: white;
-            padding: 16px;
-            margin: 10px 0;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
         }
 
-        .item-name {
-            font-weight: bold;
+        .section-title h2 {
+            font-size: 23px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title span {
+            font-size: 12px;
+            color: #9a8e84;
+        }
+
+        /* PRODUCT */
+
+        .product {
+            display: flex;
+            gap: 14px;
+            background: white;
+            border-radius: 18px;
+            padding: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 20px rgba(54, 37, 25, 0.06);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.2s ease;
+        }
+
+        .product:active {
+            transform: scale(0.98);
+        }
+
+        .product-image {
+            width: 105px;
+            height: 105px;
+            flex-shrink: 0;
+            border-radius: 14px;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .product-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .product-info p {
+            color: #81766d;
+            font-size: 12px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .product-bottom {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .price {
-            font-weight: bold;
-            color: #8a5a32;
+            font-size: 16px;
+            font-weight: 800;
+            color: #8b5e35;
         }
 
-        .contact {
-            margin: 10px 20px 30px;
+        .order-btn {
+            border: none;
+            background: #2d2118;
+            color: white;
+            border-radius: 9px;
+            padding: 8px 11px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #2d2118;
+            color: white;
+            border-radius: 22px;
             padding: 25px;
-            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .about h2 {
+            font-size: 21px;
+            margin-bottom: 9px;
+        }
+
+        .about p {
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* CONTACT */
+
+        .contact {
             background: white;
-            border-radius: 16px;
+            border-radius: 22px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
         .contact h2 {
-            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .contact p {
+            color: #81766d;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 9px;
+        }
+
+        .contact-btn {
+            flex: 1;
+            padding: 13px 8px;
+            border-radius: 11px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
         }
 
         .whatsapp {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 14px 25px;
             background: #25D366;
             color: white;
+        }
+
+        .maps {
+            background: #f2eee8;
+            color: #2d2118;
+        }
+
+        /* BOTTOM CTA */
+
+        .bottom-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 30;
+            padding: 12px 15px;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(15px);
+            border-top: 1px solid #eee7df;
+        }
+
+        .bottom-btn {
+            display: block;
+            max-width: 690px;
+            margin: auto;
+            text-align: center;
+            background: #2d2118;
+            color: white;
             text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
+            padding: 14px;
+            border-radius: 13px;
+            font-size: 14px;
+            font-weight: 700;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 14px;
+            padding: 25px 15px 110px;
+            color: #a0958c;
+            font-size: 11px;
+        }
+
+        /* DESKTOP */
+
+        @media (min-width: 700px) {
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero-content {
+                max-width: 720px;
+                margin: auto;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="hero">
-        <h1>☕ Baku Coffee</h1>
-        <p>Qəhvə • Desert • İçkilər</p>
-    </div>
+    <!-- HERO -->
 
-    <div class="menu">
+    <header class="hero">
+        <div class="hero-content">
 
-        <div class="category">
-            <h2>☕ Qəhvələr</h2>
-
-            <div class="item">
-                <span class="item-name">Espresso</span>
-                <span class="price">3 AZN</span>
+            <div class="status">
+                <span class="status-dot"></span>
+                Açıqdır
             </div>
 
-            <div class="item">
-                <span class="item-name">Cappuccino</span>
-                <span class="price">5 AZN</span>
-            </div>
+            <h1>Baku Coffee</h1>
 
-            <div class="item">
-                <span class="item-name">Latte</span>
-                <span class="price">5 AZN</span>
-            </div>
+            <p>
+                Specialty coffee • Desert • Fresh drinks
+            </p>
+
+        </div>
+    </header>
+
+
+    <!-- INFO -->
+
+    <div class="info">
+
+        <div class="info-card">
+            ☕
+            <strong>Qəhvə</strong>
         </div>
 
-        <div class="category">
-            <h2>🍰 Desertlər</h2>
-
-            <div class="item">
-                <span class="item-name">Cheesecake</span>
-                <span class="price">7 AZN</span>
-            </div>
-
-            <div class="item">
-                <span class="item-name">Brownie</span>
-                <span class="price">6 AZN</span>
-            </div>
+        <div class="info-card">
+            🍰
+            <strong>Desert</strong>
         </div>
 
-        <div class="category">
-            <h2>🥤 İçkilər</h2>
+        <div class="info-card">
+            ⭐
+            <strong>Premium</strong>
+        </div>
 
-            <div class="item">
-                <span class="item-name">Fresh Orange</span>
-                <span class="price">5 AZN</span>
-            </div>
-
-            <div class="item">
-                <span class="item-name">Limonad</span>
-                <span class="price">4 AZN</span>
-            </div>
+        <div class="info-card">
+            📍
+            <strong>Bakı</strong>
         </div>
 
     </div>
 
-    <div class="contact">
-        <h2>📍 Bizi tap</h2>
 
-        <p>Bakı, Nizami küçəsi</p>
+    <!-- CATEGORY NAV -->
 
-        <a
-            class="whatsapp"
-            href="https://wa.me/994501234567">
-            💬 WhatsApp
-        </a>
-    </div>
+    <nav class="category-nav">
+
+        <a href="#coffee">☕ Qəhvə</a>
+
+        <a href="#dessert">🍰 Desert</a>
+
+        <a href="#drinks">🥤 İçkilər</a>
+
+        <a href="#about">ℹ️ Haqqımızda</a>
+
+    </nav>
+
+
+    <main class="container">
+
+        <!-- COFFEE -->
+
+        <section class="section" id="coffee">
+
+            <div class="section-title">
+                <h2>☕ Qəhvələr</h2>
+                <span>Ən çox seçilən</span>
+            </div>
+
+            <div class="product">
+
+                <img
+                    class="product-image"
+                    src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=500&q=80"
+                    alt="Espresso">
+
+                <div class="product-info">
+
+                    <h3>Espresso</h3>
+
+                    <p>
+                        Güclü və aromatik klassik espresso.
+                    </p>
+
+                    <div class="product-bottom">
+                        <span class="price">3 AZN</span>
+
+                        <button
+                            class="order-btn"
+                            onclick="order('Espresso')">
+                            Sifariş et
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    class="product-image"
+                    src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80"
+                    alt="Cappuccino">
+
+                <div class="product-info">
+
+                    <h3>Cappuccino</h3>
+
+                    <p>
+                        Yumşaq süd köpüyü ilə klassik cappuccino.
+                    </p>
+
+                    <div class="product-bottom">
+                        <span class="price">5 AZN</span>
+
+                        <button
+                            class="order-btn"
+                            onclick="order('Cappuccino')">
+                            Sifariş et
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    class="product-image"
+                    src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=500&q=80"
+                    alt="Latte">
+
+                <div class="product-info">
+
+                    <h3>Latte</h3>
+
+                    <p>
+                        Süd ilə hazırlanmış yumşaq və kremli latte.
+                    </p>
+
+                    <div class="product-bottom">
+                        <span class="price">5 AZN</span>
+
+                        <button
+                            class="order-btn"
+                            onclick="order('Latte')">
+                            Sifariş et
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESSERT -->
+
+        <section class="section" id="dessert">
+
+            <div class="section-title">
+                <h2>🍰 Desertlər</h2>
+                <span>Şirin seçimlər</span>
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    class="product-image"
+                    src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=500&q=80"
+                    alt="Cheesecake">
+
+                <div class="product-info">
+
+                    <h3>Cheesecake</h3>
+
+                    <p>
+                        Kremli və yumşaq klassik cheesecake.
+                    </p>
+
+                    <div class="product-bottom">
+                        <span class="price">7 AZN</span>
+
+                        <button
+                            class="order-btn"
+                            onclick="order('Cheesecake')">
+                            Sifariş et
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    class="product-image"
+                    src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80"
+                    alt="Brownie">
+
+                <div class="product-info">
+
+                    <h3>Brownie</h3>
+
+                    <p>
+                        Şokoladlı, yumşaq və isti brownie.
+                    </p>
+
+                    <div class="product-bottom">
+                        <span class="price">6 AZN</span>
+
+                        <button
+                            class="order-btn"
+                            onclick="order('Brownie')">
+                            Sifariş et
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DRINKS -->
+
+        <section class="section" id="drinks">
+
+            <div class="section-title">
+                <h2>🥤 İçkilər</h2>
+                <span>Fresh & cold</span>
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    class="product-image"
+                    src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=500&q=80"
+                    alt="Limonad">
+
+                <div class="product-info">
+
+                    <h3>Fresh Limonad</h3>
+
+                    <p>
+                        Təravətli limon və nanə ilə hazırlanır.
+                    </p>
+
+                    <div class="product-bottom">
+                        <span class="price">4 AZN</span>
+
+                        <button
+                            class="order-btn"
+                            onclick="order('Fresh Limonad')">
+                            Sifariş et
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section class="about" id="about">
+
+            <h2>☕ Bizim haqqımızda</h2>
+
+            <p>
+                Baku Coffee rahat atmosferdə keyfiyyətli qəhvə,
+                təzə desertlər və xüsusi içkilər təqdim edir.
+                Dostlarınla görüşmək və günə yaxşı qəhvə ilə
+                başlamaq üçün doğru yer.
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section class="contact">
+
+            <h2>📍 Bizi ziyarət et</h2>
+
+            <p>
+                Bakı, Nizami küçəsi<br>
+                Hər gün 09:00 – 23:00
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="contact-btn whatsapp"
+                    href="https://wa.me/994501234567">
+                    💬 WhatsApp
+                </a>
+
+                <a
+                    class="contact-btn maps"
+                    href="https://www.google.com/maps/search/?api=1&query=Baku%20Azerbaijan"
+                    target="_blank">
+                    📍 Xəritə
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
 
     <footer>
         © 2026 Baku Coffee
+        <br>
+        Digital Menu
     </footer>
 
+
+    <!-- BOTTOM BUTTON -->
+
+    <div class="bottom-bar">
+
+        <a
+            class="bottom-btn"
+            href="https://wa.me/994501234567">
+            💬 WhatsApp ilə sifariş
+        </a>
+
+    </div>
+
+
+    <script>
+
+        function order(product) {
+
+            const phone = "994501234567";
+
+            const message =
+                "Salam! " +
+                product +
+                " sifariş etmək istəyirəm.";
+
+            const url =
+                "https://wa.me/" +
+                phone +
+                "?text=" +
+                encodeURIComponent(message);
+
+            window.open(url, "_blank");
+        }
+
+    </script>
+
 </body>
-</html>
+                    </html>
