@@ -640,4 +640,817 @@
         padding: 15px;
         border-radius: 40px;
         font-weight: 800;
-        box-shadow: 0 8
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      VERDE <span>DECOR</span>
+    </a>
+
+    <a class="nav-button"
+       href="https://wa.me/994501234567?text=Salam%2C%20süni%20yaşıllıq%20haqqında%20məlumat%20almaq%20istəyirəm.">
+      WhatsApp
+    </a>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        🌿 Süni yaşıllıq • Dekorasiya • Quraşdırma
+      </div>
+
+      <h1>
+        Məkanınıza<br>
+        yaşıl toxunuş.
+      </h1>
+
+      <p>
+        Süni ağaclar, dekorativ güllər, yaşıl divarlar
+        və interyer üçün xüsusi yaşıllaşdırma həlləri.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#products" class="btn btn-primary">
+          Məhsullara bax
+        </a>
+
+        <a href="https://wa.me/994501234567?text=Salam%2C%20məkanım%20üçün%20süni%20yaşıllıq%20haqqında%20qiymət%20almaq%20istəyirəm."
+           class="btn btn-secondary">
+          Qiymət soruş
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<div class="trust">
+
+  <div class="container">
+
+    <div class="trust-grid">
+
+      <div class="trust-item">
+        <div class="trust-icon">📐</div>
+        <strong>Ölçüyə uyğun</strong>
+        <span>Məkanınıza uyğun həllər</span>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">🚚</div>
+        <strong>Çatdırılma</strong>
+        <span>Ünvana çatdırılma imkanı</span>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">🛠️</div>
+        <strong>Quraşdırma</strong>
+        <span>Peşəkar montaj xidməti</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="eyebrow">
+        Kolleksiya
+      </div>
+
+      <h2>
+        Məhsullarımız
+      </h2>
+
+      <p>
+        Ev, ofis, mağaza, restoran və digər məkanlar üçün
+        dekorativ süni yaşıllıq məhsulları.
+      </p>
+
+    </div>
+
+
+    <div class="categories">
+
+      <button class="category active" onclick="filterProducts('all', this)">
+        Hamısı
+      </button>
+
+      <button class="category" onclick="filterProducts('tree', this)">
+        🌳 Süni ağaclar
+      </button>
+
+      <button class="category" onclick="filterProducts('flower', this)">
+        🌸 Güllər
+      </button>
+
+      <button class="category" onclick="filterProducts('wall', this)">
+        🌿 Yaşıl divar
+      </button>
+
+      <button class="category" onclick="filterProducts('pot', this)">
+        🪴 Dibçək
+      </button>
+
+    </div>
+
+
+    <div class="products">
+
+
+      <!-- PRODUCT 1 -->
+
+      <div class="product" data-category="tree">
+
+        <img class="product-image"
+             src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=800&q=80"
+             alt="Süni zeytun ağacı">
+
+        <div class="product-body">
+
+          <div class="product-tag">
+            Süni ağac
+          </div>
+
+          <h3>
+            Zeytun ağacı
+          </h3>
+
+          <p>
+            Minimal və premium interyerlər üçün dekorativ ağac.
+          </p>
+
+          <button class="product-button"
+                  onclick="askProduct('Zeytun ağacı')">
+            Məlumat al →
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 2 -->
+
+      <div class="product" data-category="tree">
+
+        <img class="product-image"
+             src="https://images.unsplash.com/photo-1597055181300-b9b5e5c5f3e1?auto=format&fit=crop&w=800&q=80"
+             alt="Süni palma ağacı">
+
+        <div class="product-body">
+
+          <div class="product-tag">
+            Süni ağac
+          </div>
+
+          <h3>
+            Dekorativ palma
+          </h3>
+
+          <p>
+            Böyük məkanlar üçün hündür və diqqətçəkən model.
+          </p>
+
+          <button class="product-button"
+                  onclick="askProduct('Dekorativ palma')">
+            Məlumat al →
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 3 -->
+
+      <div class="product" data-category="flower">
+
+        <img class="product-image"
+             src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80"
+             alt="Dekorativ güllər">
+
+        <div class="product-body">
+
+          <div class="product-tag">
+            Dekorativ gül
+          </div>
+
+          <h3>
+            Süni çiçək kompozisiyası
+          </h3>
+
+          <p>
+            Masa, resepsiyon və vitrinlər üçün dekorativ kompozisiya.
+          </p>
+
+          <button class="product-button"
+                  onclick="askProduct('Süni çiçək kompozisiyası')">
+            Məlumat al →
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 4 -->
+
+      <div class="product" data-category="wall">
+
+        <img class="product-image"
+             src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=800&q=80"
+             alt="Yaşıl divar">
+
+        <div class="product-body">
+
+          <div class="product-tag">
+            Yaşıl divar
+          </div>
+
+          <h3>
+            Dekorativ yaşıl divar
+          </h3>
+
+          <p>
+            Ofis, restoran, mağaza və evlər üçün divar yaşıllığı.
+          </p>
+
+          <button class="product-button"
+                  onclick="askProduct('Dekorativ yaşıl divar')">
+            Məlumat al →
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 5 -->
+
+      <div class="product" data-category="pot">
+
+        <img class="product-image"
+             src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80"
+             alt="Dibçək bitkisi">
+
+        <div class="product-body">
+
+          <div class="product-tag">
+            Dibçək
+          </div>
+
+          <h3>
+            Dekorativ dibçək
+          </h3>
+
+          <p>
+            Müxtəlif ölçü və üslubda interyer bitkiləri.
+          </p>
+
+          <button class="product-button"
+                  onclick="askProduct('Dekorativ dibçək')">
+            Məlumat al →
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 6 -->
+
+      <div class="product" data-category="flower">
+
+        <img class="product-image"
+             src="https://images.unsplash.com/photo-1526397751294-331021109fbd?auto=format&fit=crop&w=800&q=80"
+             alt="Süni yarpaq dekoru">
+
+        <div class="product-body">
+
+          <div class="product-tag">
+            Dekor
+          </div>
+
+          <h3>
+            Yarpaq kompozisiyası
+          </h3>
+
+          <p>
+            Minimalist interyerlər üçün təbii görünüşlü dekor.
+          </p>
+
+          <button class="product-button"
+                  onclick="askProduct('Yarpaq kompozisiyası')">
+            Məlumat al →
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 7 -->
+
+      <div class="product" data-category="wall">
+
+        <img class="product-image"
+             src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=800&q=80"
+             alt="Yaşıl panel">
+
+        <div class="product-body">
+
+          <div class="product-tag">
+            Panel
+          </div>
+
+          <h3>
+            Yaşıl dekor paneli
+          </h3>
+
+          <p>
+            Divar və vitrinlər üçün modul yaşıl panel sistemi.
+          </p>
+
+          <button class="product-button"
+                  onclick="askProduct('Yaşıl dekor paneli')">
+            Məlumat al →
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 8 -->
+
+      <div class="product" data-category="pot">
+
+        <img class="product-image"
+             src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80"
+             alt="İnteryer bitkisi">
+
+        <div class="product-body">
+
+          <div class="product-tag">
+            İnteryer
+          </div>
+
+          <h3>
+            Premium bitki
+          </h3>
+
+          <p>
+            Ofis və kommersiya məkanları üçün dekorativ seçim.
+          </p>
+
+          <button class="product-button"
+                  onclick="askProduct('Premium interyer bitkisi')">
+            Məlumat al →
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section style="background:#ffffff;">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="eyebrow">
+        Portfolio
+      </div>
+
+      <h2>
+        Nümunə işlər
+      </h2>
+
+      <p>
+        Müxtəlif məkanlarda tətbiq oluna biləcək
+        dekorasiya və yaşıllaşdırma nümunələri.
+      </p>
+
+    </div>
+
+
+    <div class="projects">
+
+      <div class="project">
+
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
+             alt="Ofis yaşıllaşdırılması">
+
+        <div class="project-overlay">
+
+          <small>Ofis</small>
+
+          <h3>
+            Yaşıl ofis konsepti
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=85"
+             alt="Mağaza dekorasiyası">
+
+        <div class="project-overlay">
+
+          <small>Mağaza</small>
+
+          <h3>
+            Vitrin dekorasiyası
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85"
+             alt="Restoran dekorasiyası">
+
+        <div class="project-overlay">
+
+          <small>Kommersiya</small>
+
+          <h3>
+            Yaşıl restoran konsepti
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"
+             alt="Ev dekorasiyası">
+
+        <div class="project-overlay">
+
+          <small>Ev</small>
+
+          <h3>
+            Ev interyerində yaşıllıq
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85"
+             alt="Biznes məkanı">
+
+        <div class="project-overlay">
+
+          <small>Biznes</small>
+
+          <h3>
+            Premium interyer
+          </h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="eyebrow">
+        Xidmətlər
+      </div>
+
+      <h2>
+        Sadəcə məhsul satmırıq.
+      </h2>
+
+      <p>
+        Məkanın görünüşündən məhsul seçiminə və
+        quraşdırmaya qədər tam həll təqdim etmək mümkündür.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+      <div class="service">
+
+        <div class="service-icon">🎨</div>
+
+        <h3>
+          Dizayn
+        </h3>
+
+        <p>
+          Məkanın ölçüsünə və üslubuna uyğun yaşıllaşdırma ideyası.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="service-icon">🌿</div>
+
+        <h3>
+          Məhsul seçimi
+        </h3>
+
+        <p>
+          Süni ağac, gül, divar yaşıllığı və dekor elementləri.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="service-icon">🚚</div>
+
+        <h3>
+          Çatdırılma
+        </h3>
+
+        <p>
+          Sifarişlərin ünvana çatdırılması üçün xidmət.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="service-icon">🛠️</div>
+
+        <h3>
+          Quraşdırma
+        </h3>
+
+        <p>
+          Yaşıl divar və digər dekorların quraşdırılması.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section>
+
+  <div class="container">
+
+    <div class="about">
+
+      <img class="about-image"
+           src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=85"
+           alt="Yaşıl interyer">
+
+      <div class="about-text">
+
+        <div class="eyebrow">
+          VERDE DECOR
+        </div>
+
+        <h2>
+          Təbii görünüş.<br>
+          Minimum qulluq.
+        </h2>
+
+        <p>
+          Süni yaşıllıq interyerə canlı və premium görünüş
+          qazandırmaq üçün praktik həllərdən biridir.
+        </p>
+
+        <p>
+          Evdən ofisə, mağazadan restorana qədər
+          müxtəlif məkanlara uyğun məhsul və dekorasiya
+          konseptləri hazırlamaq mümkündür.
+        </p>
+
+        <ul class="check-list">
+
+          <li>✓ Suvarma tələb etmir</li>
+          <li>✓ İl boyu yaşıl görünüş</li>
+          <li>✓ Müxtəlif ölçü və modellər</li>
+          <li>✓ Fərdi layihələrə uyğunlaşdırma</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section>
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <div class="eyebrow">
+        Əlaqə
+      </div>
+
+      <h2>
+        Məkanınızı yaşıllaşdıraq 🌿
+      </h2>
+
+      <p>
+        Məkanınızın şəklini və təxmini ölçüsünü göndərin.
+        Uyğun məhsullar barədə məlumat alın.
+      </p>
+
+      <div class="contact-buttons">
+
+        <a class="contact-button"
+           href="https://wa.me/994501234567?text=Salam%2C%20məkanım%20üçün%20süni%20yaşıllıq%20haqqında%20məlumat%20almaq%20istəyirəm.">
+          WhatsApp-a yaz
+        </a>
+
+        <a class="contact-button map-button"
+           href="https://www.google.com/maps/search/?api=1&query=Baku%2C%20Azerbaijan"
+           target="_blank">
+          📍 Ünvan
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-content">
+
+    <div>
+
+      <div class="footer-logo">
+        VERDE DECOR
+      </div>
+
+      <div class="footer-small">
+        Süni yaşıllıq və interyer dekorasiyası
+      </div>
+
+    </div>
+
+    <div class="footer-small">
+      © 2026 VERDE DECOR
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- MOBILE CTA -->
+
+<div class="mobile-cta">
+
+  <a href="https://wa.me/994501234567?text=Salam%2C%20süni%20yaşıllıq%20haqqında%20məlumat%20almaq istəyirəm.">
+    💬 WhatsApp ilə qiymət soruş
+  </a>
+
+</div>
+
+
+<script>
+
+  function askProduct(product) {
+
+    const message =
+      "Salam, " +
+      product +
+      " məhsulu haqqında məlumat və qiymət almaq istəyirəm.";
+
+    const url =
+      "https://wa.me/994501234567?text=" +
+      encodeURIComponent(message);
+
+    window.open(url, "_blank");
+  }
+
+
+  function filterProducts(category, button) {
+
+    const products =
+      document.querySelectorAll(".product");
+
+    const buttons =
+      document.querySelectorAll(".category");
+
+    buttons.forEach(function(btn) {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    products.forEach(function(product) {
+
+      if (
+        category === "all" ||
+        product.dataset.category === category
+      ) {
+
+        product.style.display = "";
+
+      } else {
+
+        product.style.display = "none";
+
+      }
+
+    });
+
+  }
+
+</script>
+
+</body>
+</html>
